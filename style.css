@@ -8,11 +8,6 @@
 .rounded{
 	position:absolute;
 	border-radius: 50%;
-	color: blue;
-}
-.DIV{
 	height: 10vh;
 	width: 10vh;
-	border-radius: 50%;
-	position: absolute;
 }

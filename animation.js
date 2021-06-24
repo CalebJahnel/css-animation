@@ -9,23 +9,25 @@ $(function(){
 
 			for(x=0;x<9;x++){
 
-				let div = document.createElement("DIV");
-				$this.addClass("rounded")
-
-				$(".rounded").each(function(){
-					$this.data("x-coord","x");
-					$this.data("y-coord","y");
-				});
-
+				const $div = document.createElement("div");
+				$div.classList.add("rounded");
+				$div.classList.add("RainbowSwap");
+				document.getElementById("Large-Square").appendChild($div);
 			};
 
 		};
 
 	};
 
-	setInterval(AddCircles, 100);
+	setInterval(AddCircles, 1000);
 
-	$(".DIV").each(function(){
+	function sleep(ms) {
+  		return new Promise(
+    	resolve => setTimeout(resolve, ms)
+  		);
+	}
+
+	$(".RainbowSwap").each(function(){
 		async function RainbowSwap(){
 			$this.css("color","red");
 			await sleep(2000);
@@ -39,12 +41,6 @@ $(function(){
 			await sleep(2000);
 			$this.css("color","indigo");
 		};
-	});
-
-	$(".big-square").css({position:"relative"});
-
-	$("div").each(function(){
-		$this.css({position:"absolute",top:"y-coord*10vh",left:"x-coord*10vh"});
 	});
 
 });
