@@ -1,18 +1,18 @@
 
-$(function() {
+$(function(){
 
-	let $this =$(this);
+	let $this = $(this);
 
-	function AddCircles(x,y){
+	function AddCircles(){
 
 		for(y=0;y<9;y++){
 
 			for(x=0;x<9;x++){
 
-				(".big-square").createElement("div");
-				("div").addClass("rounded");
+				let div = document.createElement("DIV");
+				$this.addClass("rounded")
 
-				$("div").each(function(){
+				$(".rounded").each(function(){
 					$this.data("x-coord","x");
 					$this.data("y-coord","y");
 				});
@@ -25,15 +25,25 @@ $(function() {
 
 	setInterval(AddCircles, 100);
 
-	function RainbowSwap(){
-		setTimeout(function(){
-
-		},2000);
-	};
+	$(".DIV").each(function(){
+		async function RainbowSwap(){
+			$this.css("color","red");
+			await sleep(2000);
+			$this.css("color","orange");
+			await sleep(2000);
+			$this.css("color","yellow");
+			await sleep(2000);
+			$this.css("color","green");
+			await sleep(2000);
+			$this.css("color","blue");
+			await sleep(2000);
+			$this.css("color","indigo");
+		};
+	});
 
 	$(".big-square").css({position:"relative"});
 
-	("div").each(function(){
+	$("div").each(function(){
 		$this.css({position:"absolute",top:"y-coord*10vh",left:"x-coord*10vh"});
 	});
 
