@@ -1,6 +1,9 @@
 
 $(function(){
 
+	//var x_value;
+	//var y_value;
+
 	let $this = $(this);
 
 	function sleep(ms) {
@@ -26,12 +29,16 @@ $(function(){
   					left: `${x*10}vh`
 				});
 
-				let x_coord = 50 - x*10;
-				let y_coord = 50 - y*10;
+				//x_value = x;
+				//y_value = y;
 
 				await sleep(100);
+
 			};
 		};
+		$(".rounded").addClass("J");
+		await sleep(5000);
+		$(".rounded").removeClass("J").addClass("Square-Center");
 	};
 
 	AddCircles();
@@ -41,20 +48,23 @@ $(function(){
 	const $mid = $(".Middle-Square");
 	$square.append($mid);
 
+
 	async function Animation(){
 
 		await sleep(10000);
 
 		$(".rounded").each(function(){
 			let $this = $(this);
+			let x_coord = 50 - $this.position().left*10;
+			let y_coord = 50 - $this.position().top*10;
 			$this.animate({
 				backgroundColor:"black",
-				top: "y-coord vh",
-				left: "x-coord vh"
+				top: `+= ${y_coord} vh`,
+				left: `+= ${x_coord} vh`
 			});
 		});
 	};
 
-	Animation();
+	//Animation();
 
 });
