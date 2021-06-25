@@ -5,9 +5,22 @@
 	position: relative;
 }
 
+@keyframes ChangeColor{
+	0%{background-color: red;}
+	20%{background-color: orange;}
+	40%{background-color:yellow;}
+	60%{background-color:green;}
+	80%{background-color:blue;}
+	100%{background-color:indigo;}
+}
+
 .rounded{
 	position:absolute;
 	border-radius: 50%;
 	height: 10vh;
 	width: 10vh;
+	top:10vh;
+	left:10vh;
+	animation-name: ChangeColor;
+	animation-duration: 10s;
 }
