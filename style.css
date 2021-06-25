@@ -19,8 +19,17 @@
 	border-radius: 50%;
 	height: 10vh;
 	width: 10vh;
-	top:10vh;
-	left:10vh;
+
 	animation-name: ChangeColor;
 	animation-duration: 10s;
+}
+.Middle-Square{
+	position: absolute;
+	height:5vh;
+	width:5vh;
+	left:50%;
+	top:50%;
+	background-color: red;
+	margin-top: -2.5vh;
+	margin-left: -2.5vh;
 }
